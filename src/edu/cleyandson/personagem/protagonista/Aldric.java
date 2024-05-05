@@ -1,4 +1,6 @@
-package edu.cleyandson.personagem;
+package edu.cleyandson.personagem.protagonista;
+
+import edu.cleyandson.personagem.arsenal_do_protagonista.Armas;
 
 public class Aldric {
     //Atributos
@@ -89,7 +91,7 @@ public class Aldric {
 
     }
 
-    //Métodos
+    //Método para chegar o status atual do personagem
     public void status(){
         System.out.println("Nome: " + getNome());
         System.out.println("Nível" + getNivel());
@@ -101,10 +103,12 @@ public class Aldric {
         }
     }
 
+    //Método atacar os inimigos
     public void atacar(){
 
     }
 
+    //Método que realiza o UP de nível do personagem para o próx level com os novos status
     public void upar(){
         this.nivel++;
         this.exp = 0;
