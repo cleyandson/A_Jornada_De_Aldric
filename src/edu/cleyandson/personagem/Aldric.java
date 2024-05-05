@@ -4,6 +4,7 @@ public class Aldric {
     //Atributos
     private String nome;
     private int nivel;
+    private int exp;
     private int vida;
     private int ataque;
     private int defesa;
@@ -13,6 +14,7 @@ public class Aldric {
     //Construtores
     public Aldric(String nome, int nivel, Armas arma){
         this.nome = nome;
+        this.exp = 0;
         this.nivel = nivel;
         this.vida = 100;
         this.ataque = 5;
@@ -28,6 +30,14 @@ public class Aldric {
 
     public void setNome(String nome){
         this.nome = nome;
+    }
+
+    public int getExp(){
+        return this.exp;
+    }
+
+    public void setExp(int exp){
+        this.exp = exp;
     }
 
     public int getNivel(){
@@ -93,5 +103,10 @@ public class Aldric {
 
     public void atacar(){
 
+    }
+
+    public void upar(){
+        this.nivel++;
+        this.exp = 0;
     }
 }
