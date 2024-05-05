@@ -90,4 +90,8 @@ public class Aldric {
             System.out.println("Situação: Honrado");
         }
     }
+
+    public void atacar(){
+
+    }
 }
