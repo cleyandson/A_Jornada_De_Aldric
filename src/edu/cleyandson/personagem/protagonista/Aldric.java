@@ -97,9 +97,9 @@ public class Aldric {
         System.out.println("Nível" + getNivel());
 
         if(desonrado){
-            System.out.println("Situação: Desonrado");
+            System.out.println("Situação: Caiu em desonra.");
         } else {
-            System.out.println("Situação: Honrado");
+            System.out.println("Situação: Honrado!");
         }
     }
 
