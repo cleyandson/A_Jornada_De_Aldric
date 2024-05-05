@@ -4,13 +4,19 @@ public class Aldric {
     //Atributos
     private String nome;
     private int nivel;
+    private int vida;
+    private int ataque;
+    private int defesa;
     private boolean desonrado;
     private Armas arma;
 
     //Construtores
-    public Aldric(String nome, int nivel, boolean desonrado, Armas arma){
+    public Aldric(String nome, int nivel, Armas arma){
         this.nome = nome;
         this.nivel = nivel;
+        this.vida = 100;
+        this.ataque = 5;
+        this.defesa = 0;
         this.desonrado = false;
         this.arma = arma;
     }
@@ -32,6 +38,30 @@ public class Aldric {
         this.nivel = nivel;
     }
 
+    public int getVida(){
+        return this.vida;
+    }
+
+    public void setVida(int vida){
+        this.vida = vida;
+    }
+
+    public int getAtaque(){
+        return this.ataque;
+    }
+
+    public void setAtaque(int ataque){
+        this.ataque = ataque;
+    }
+
+    public int getDefesa(){
+        return this.defesa;
+    }
+
+    public void setDefesa(int defesa){
+        this.defesa = defesa;
+    }
+
     public boolean isDesonrado(){
         return this.desonrado;
     }
@@ -50,7 +80,6 @@ public class Aldric {
     }
 
     //Métodos
-
     public void status(){
         System.out.println("Nome: " + getNome());
         System.out.println("Nível" + getNivel());
