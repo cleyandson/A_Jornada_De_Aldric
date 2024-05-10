@@ -1,6 +1,7 @@
 package edu.cleyandson.personagem.protagonista;
 
 import edu.cleyandson.personagem.arsenal_do_protagonista.Armas;
+import edu.cleyandson.personagem.inimigos.Inimigo;
 
 public class Aldric {
     //Atributos
@@ -104,8 +105,23 @@ public class Aldric {
     }
 
     //Método atacar os inimigos
-    public void atacar(){
+    public void atacarInimigo(Inimigo inimigo){
+        //Verficar se está com alguma arma na mão
+        int danoBase = getAtaque();
+        if(arma != null){
+            danoBase += arma.getQuantidadePoder();
+            System.out.println(getNome() + " empunhou sua " + getArma() + " e agora está com " + getAtaque() + " de ataque!");
+        }
 
+        //Calcular o dano considerando a defesa do inimigo
+        int danoTotal  = Math.max(0, danoBase - inimigo.getDefesa());
+
+        //Reduzindo a vida do inimigo com base no dano
+        inimigo.setVida(inimigo.getVida() - danoTotal);
+
+        //Calcular o dano real que o inimigo recebeu e printar pro usuário
+        int danoReal = inimigo.getVida() - (inimigo.getVida() - danoTotal);
+        System.out.println(getNome() + " atacou " + inimigo.getNome() + " causando " + danoReal + " de dano!");
     }
 
     //Método que realiza o UP de nível do personagem para o próx level com os novos status

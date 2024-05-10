@@ -10,5 +10,19 @@ public class Armas {
         this.quantidadePoder = quantidadePoder;
     }
 
+    public String getNome() {
+        return nome;
+    }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getQuantidadePoder() {
+        return quantidadePoder;
+    }
+
+    public void setQuantidadePoder(int quantidadePoder) {
+        this.quantidadePoder = quantidadePoder;
+    }
 }
