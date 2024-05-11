@@ -1,20 +1,12 @@
 package edu.cleyandson.personagem.inimigos;
 
+import edu.cleyandson.personagem.personagem.Personagem;
 import edu.cleyandson.personagem.protagonista.Aldric;
 
-public class Inimigo {
-    //Atributos
-    private String nome;
-    private int vida;
-    private int ataque;
-    private int defesa;
-
+public class Inimigo extends Personagem {
     //Construtor
     public Inimigo(String nome, int vida, int ataque, int defesa){
-        this.nome = nome;
-        this.vida = vida;
-        this.ataque = ataque;
-        this.defesa = defesa;
+        super(nome, vida, ataque, defesa);
     }
 
     //Getters & Setters
@@ -50,14 +42,14 @@ public class Inimigo {
         this.defesa = defesa;
     }
 
-    //Método para atacar protagonista
-    public void atacarAldric(Aldric aldric){
-        int dano = getAtaque() - aldric.getDefesa();
+    @Override
+    public void atacar(Personagem alvo) {
+        int dano = getAtaque() - alvo.getDefesa();
         if(dano < 0){
             dano = 0; //dano não pode ser negativo
         }
-        aldric.setVida(aldric.getVida() - dano);
-        System.out.println(getNome() + " atacou " + aldric.getNome() + " e causou " + dano + " de dano!");
+        alvo.setVida(alvo.getVida() - dano);
+        System.out.println(getNome() + " atacou " + alvo.getNome() + " e causou " + dano + " de dano!");
     }
 
     //Método para ver o status do inimigo

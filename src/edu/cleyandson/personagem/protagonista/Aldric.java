@@ -2,26 +2,20 @@ package edu.cleyandson.personagem.protagonista;
 
 import edu.cleyandson.personagem.arsenal_do_protagonista.Armas;
 import edu.cleyandson.personagem.inimigos.Inimigo;
+import edu.cleyandson.personagem.personagem.Personagem;
 
-public class Aldric {
+public class Aldric extends Personagem {
     //Atributos
-    private String nome;
     private int nivel;
     private int exp;
-    private int vida;
-    private int ataque;
-    private int defesa;
     private boolean desonrado;
     private Armas arma;
 
     //Construtores
-    public Aldric(String nome, int nivel, Armas arma){
-        this.nome = nome;
+    public Aldric(Armas arma){
+        super("Aldrich", 100, 10, 0);
+        this.nivel = 0;
         this.exp = 0;
-        this.nivel = nivel;
-        this.vida = 100;
-        this.ataque = 5;
-        this.defesa = 0;
         this.desonrado = false;
         this.arma = arma;
     }
@@ -105,7 +99,10 @@ public class Aldric {
     }
 
     //Método atacar os inimigos
-    public void atacarInimigo(Inimigo inimigo){
+
+
+    @Override
+    public void atacar(Personagem alvo) {
         //Verficar se está com alguma arma na mão
         int danoBase = getAtaque();
         if(arma != null){
@@ -114,14 +111,15 @@ public class Aldric {
         }
 
         //Calcular o dano considerando a defesa do inimigo
-        int danoTotal  = Math.max(0, danoBase - inimigo.getDefesa());
+        int danoTotal  = Math.max(0, danoBase - alvo.getDefesa());
 
         //Reduzindo a vida do inimigo com base no dano
-        inimigo.setVida(inimigo.getVida() - danoTotal);
+        alvo.setVida(alvo.getVida() - danoTotal);
 
         //Calcular o dano real que o inimigo recebeu e printar pro usuário
-        int danoReal = inimigo.getVida() - (inimigo.getVida() - danoTotal);
-        System.out.println(getNome() + " atacou " + inimigo.getNome() + " causando " + danoReal + " de dano!");
+        int danoReal = alvo.getVida() - (alvo.getVida() - danoTotal);
+        System.out.println(getNome() + " atacou " + alvo.getNome() + " causando " + danoReal + " de dano!");
+
     }
 
     //Método que realiza o UP de nível do personagem para o próx level com os novos status

@@ -13,8 +13,8 @@ public class Main {
         System.out.println("********************************************************\n");
 
         //Criação do protagonista e sua arma inicial
-        Armas espadaFalcaoNegro = new Armas("Espada - Falcão da Aurora Negra", 10);
-        Aldric aldrich = new Aldric("Aldrich", 1, espadaFalcaoNegro);
+        Armas espadaFalcaoNegro = new Armas ("Espada - Falcão da Aurora Negra", 10);
+        Aldric aldrich = new Aldric (espadaFalcaoNegro);
 
         //Criação do primeiro inimigo
         Inimigo caveleiroSombrio = new Inimigo("Caveleiro Sombrio do Rei Demônio", 50, 5, 5);
