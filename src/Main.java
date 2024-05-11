@@ -28,8 +28,5 @@ public class Main {
         //Início da batalha entre Aldrich e o Caveleiro Sombrio do Rei Demônio
         Aldric aldric;
         System.out.println("\nBatalha começando! " + aldrich.getNome() + " vs " + caveleiroSombrio.getNome());
-
-
-
     }
 }
