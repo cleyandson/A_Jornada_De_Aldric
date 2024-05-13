@@ -1,10 +1,10 @@
-package edu.cleyandson.personagem.protagonista;
+package edu.cleyandson.rpg.protagonista;
 
-import edu.cleyandson.personagem.arsenal_do_protagonista.Armas;
-import edu.cleyandson.personagem.inimigos.Inimigo;
-import edu.cleyandson.personagem.personagem.Personagem;
+import edu.cleyandson.rpg.arsenal_do_protagonista.Armas;
+import edu.cleyandson.rpg.combate.Combate;
+import edu.cleyandson.rpg.personagem.Personagem;
 
-public class Aldric extends Personagem {
+public class Aldric extends Personagem implements Combate {
     //Atributos
     private int nivel;
     private int exp;
@@ -99,8 +99,6 @@ public class Aldric extends Personagem {
     }
 
     //Método atacar os inimigos
-
-
     @Override
     public void atacar(Personagem alvo) {
         //Verficar se está com alguma arma na mão
@@ -119,6 +117,12 @@ public class Aldric extends Personagem {
         //Calcular o dano real que o inimigo recebeu e printar pro usuário
         int danoReal = alvo.getVida() - (alvo.getVida() - danoTotal);
         System.out.println(getNome() + " atacou " + alvo.getNome() + " causando " + danoReal + " de dano!");
+
+    }
+
+    //Método para soltar o poder especial quando atingir x de energia
+    @Override
+    public void poderEspecial(Personagem alvo) {
 
     }
 

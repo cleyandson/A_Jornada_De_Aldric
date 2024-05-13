@@ -1,6 +1,4 @@
-package edu.cleyandson.personagem.personagem;
-
-import edu.cleyandson.personagem.inimigos.Inimigo;
+package edu.cleyandson.rpg.personagem;
 
 public abstract class Personagem {
     //Atributos gerais que todos personangenss do meu rpg terão

@@ -1,4 +1,4 @@
-package edu.cleyandson.personagem.arsenal_do_protagonista;
+package edu.cleyandson.rpg.arsenal_do_protagonista;
 
 public class Armas {
     //Atributos

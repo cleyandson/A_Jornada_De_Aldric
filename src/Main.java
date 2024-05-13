@@ -1,6 +1,6 @@
-import edu.cleyandson.personagem.arsenal_do_protagonista.Armas;
-import edu.cleyandson.personagem.inimigos.Inimigo;
-import edu.cleyandson.personagem.protagonista.Aldric;
+import edu.cleyandson.rpg.arsenal_do_protagonista.Armas;
+import edu.cleyandson.rpg.inimigos.Inimigo;
+import edu.cleyandson.rpg.protagonista.Aldric;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
-package edu.cleyandson.personagem.inimigos;
+package edu.cleyandson.rpg.inimigos;
 
-import edu.cleyandson.personagem.personagem.Personagem;
-import edu.cleyandson.personagem.protagonista.Aldric;
+import edu.cleyandson.rpg.combate.Combate;
+import edu.cleyandson.rpg.personagem.Personagem;
 
 public class Inimigo extends Personagem {
     //Construtor

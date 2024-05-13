@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5a91736-60e7-4603-8f15-d630a20f8467" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/edu/cleyandson/personagem/personagem/Personagem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/cleyandson/rpg/combate/Combate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/cleyandson/personagem/inimigos/Inimigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cleyandson/personagem/inimigos/Inimigo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/cleyandson/personagem/protagonista/Aldric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cleyandson/personagem/protagonista/Aldric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/cleyandson/personagem/arsenal_do_protagonista/Armaduras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cleyandson/rpg/arsenal_do_protagonista/Armaduras.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/cleyandson/personagem/arsenal_do_protagonista/Armas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cleyandson/rpg/arsenal_do_protagonista/Armas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/cleyandson/personagem/inimigos/Inimigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cleyandson/rpg/inimigos/Inimigo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/cleyandson/personagem/personagem/Personagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cleyandson/rpg/personagem/Personagem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/cleyandson/personagem/protagonista/Aldric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/cleyandson/rpg/protagonista/Aldric.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +23,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -164,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715387496311</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="commit">
+      <option name="closed" value="true" />
+      <created>1715450397699</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1715450397699</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
