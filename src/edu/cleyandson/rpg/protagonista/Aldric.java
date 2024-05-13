@@ -2,6 +2,7 @@ package edu.cleyandson.rpg.protagonista;
 
 import edu.cleyandson.rpg.arsenal_do_protagonista.Armas;
 import edu.cleyandson.rpg.combate.Combate;
+import edu.cleyandson.rpg.inimigos.Inimigo;
 import edu.cleyandson.rpg.personagem.Personagem;
 
 public class Aldric extends Personagem implements Combate {
@@ -10,6 +11,7 @@ public class Aldric extends Personagem implements Combate {
     private int exp;
     private boolean desonrado;
     private Armas arma;
+    private int energia;
 
     //Construtores
     public Aldric(Armas arma){
@@ -18,6 +20,7 @@ public class Aldric extends Personagem implements Combate {
         this.exp = 0;
         this.desonrado = false;
         this.arma = arma;
+        this.energia = 0;
     }
 
     //Getters & Setters
@@ -86,6 +89,14 @@ public class Aldric extends Personagem implements Combate {
 
     }
 
+    public int getEnergia(){
+        return this.energia;
+    }
+
+    public void setEnergia(int energia){
+        this.energia = energia;
+    }
+
     //Método para chegar o status atual do personagem
     public void status(){
         System.out.println("Nome: " + getNome());
@@ -98,9 +109,25 @@ public class Aldric extends Personagem implements Combate {
         }
     }
 
-    //Método atacar os inimigos
+    //Método para incrementar energia
+    @Override
+    public void incrementarEnergia(int valor) {
+        this.energia += valor;
+    }
+
+
+    //Método para atacar
     @Override
     public void atacar(Personagem alvo) {
+        //Incrementar 10 de energia a cada ataque
+        incrementarEnergia(10);
+
+        //Se a energia for 100 ou passar, executa automaticamente o ESPECIAL e reseta a energia pra 0
+        if(this.energia >= 100){
+            poderEspecial(alvo);
+            setEnergia(0);
+        }
+
         //Verficar se está com alguma arma na mão
         int danoBase = getAtaque();
         if(arma != null){
@@ -123,7 +150,30 @@ public class Aldric extends Personagem implements Combate {
     //Método para soltar o poder especial quando atingir x de energia
     @Override
     public void poderEspecial(Personagem alvo) {
-        //implementar lógica do poder
+        //Verifica se o alvo é um inimigo
+        if(alvo instanceof Inimigo){
+
+            //Verficar se está com alguma arma na mão
+            int danoBase = getAtaque();
+
+            if(arma != null){
+                danoBase += arma.getQuantidadePoder();
+            }
+
+            //O poder especial multiplica o dano base
+            int danoDuplicado = danoBase * 2;
+
+            //Calcula o dano total considerando a defesa do alvo
+            int danoDoEspecial = Math.max(0, danoDuplicado - alvo.getDefesa());
+
+            //Reduz a vida do alvo com base no dano
+            alvo.setVida(alvo.getVida() - danoDoEspecial);
+
+            //Printa pro usuário o especial e o dano
+            System.out.println(getNome() + " usou seu poder especial e causou" + danoDoEspecial);
+        } else {
+            System.out.println("O poder de " + getNome() + " só pode ser usado contra a força do Rei Demônio.");
+        }
     }
 
     //Método que realiza o UP de nível do personagem para o próx level com os novos status
