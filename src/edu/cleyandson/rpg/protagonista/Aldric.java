@@ -123,7 +123,7 @@ public class Aldric extends Personagem implements Combate {
     //Método para soltar o poder especial quando atingir x de energia
     @Override
     public void poderEspecial(Personagem alvo) {
-
+        //implementar lógica do poder
     }
 
     //Método que realiza o UP de nível do personagem para o próx level com os novos status
