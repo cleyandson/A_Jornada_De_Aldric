@@ -15,7 +15,7 @@ public class Aldric extends Personagem implements Combate {
 
     //Construtores
     public Aldric(Armas arma){
-        super("Aldrich", 100, 10, 0);
+        super("Aldrich", 3000, 10, 0);
         this.nivel = 0;
         this.exp = 0;
         this.desonrado = false;
@@ -99,8 +99,12 @@ public class Aldric extends Personagem implements Combate {
 
     // Método para chegar o status atual do personagem
     public void status(){
+        System.out.println("------- STATUS DO PERSONAGEM -------");
         System.out.println("Nome: " + getNome());
-        System.out.println("Nível" + getNivel());
+        System.out.println("Vida: " + getVida());
+        System.out.println("Ataque: " + getAtaque());
+        System.out.println("Defesa: " + getDefesa());
+        System.out.println("Arma em mãos: " + getArma().getNome());
 
         if(desonrado){
             System.out.println("Situação: Caiu em desonra.");
@@ -126,7 +130,7 @@ public class Aldric extends Personagem implements Combate {
         // Verficar se está com alguma arma na mão
         if(arma != null){
             danoBase += arma.getQuantidadePoder();
-            System.out.println(getNome() + " empunhou sua " + getArma() + " e agora está com " + getAtaque() + " de ataque!");
+            System.out.println(getNome() + " empunhou sua " + getArma().getNome() + " e agora está com " + danoBase + " de ataque!");
         }
 
         // Calcular o dano considerando a defesa do inimigo
@@ -206,11 +210,5 @@ public class Aldric extends Personagem implements Combate {
         } else {
             System.out.println("O Ultimate de " +getNome() + " só pode ser usado contra a força do Rei Demônio");
         }
-    }
-
-    //   Método que realiza o UP de nível do personagem para o próx level com os novos status
-    public void upar(){
-        this.nivel++;
-        this.exp = 0;
     }
 }
