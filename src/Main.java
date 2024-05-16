@@ -70,14 +70,24 @@ public class Main {
         // Criação do Rei Demônio
         Inimigo reiDemônio = new Inimigo("Rei Demônio", 50000, 250, 0);
 
-        // Enredo da aparição do Rei Demônio
+        // Enredo da pré Rei Demônio
         //System.out.println();
 
         // Combate
             while(jogador.getVida() > 0 && reiDemônio.getVida() > 0) {
-                // Ações pro jogador
+                // Mostrar status do jogador e do Rei Demônio
+                System.out.println("\n------- Status de Combate -------");
+                System.out.println(reiDemônio.getNome());
+                System.out.println("HP: " + reiDemônio.getVida() + "/" + reiDemônio.getVidaMaxima());
+                System.out.println("-----------------------------------");
+                System.out.println(jogador.getNome());
+                System.out.println("HP: " + jogador.getVida() + "/" + jogador.getVidaMaxima());
+                System.out.println("Energia: " + jogador.getEnergia() + "/" + jogador.getEnergiaMaxima());
+                System.out.println("-----------------------------------");
 
-                System.out.println("\nEscolha sua ação!");
+
+                // Ações pro jogador
+                System.out.println("Escolha sua ação!");
                 System.out.println("(1) - Atacar");
                 System.out.println("(2) - Poder Especial da " + jogador.getArma().getNome());
                 if (jogador.getEnergia() >= 100){
@@ -101,9 +111,24 @@ public class Main {
                             System.out.println("Energia insuficiente para usar a Ultimate");
                         }
                         break;
+
+                    default:
+                        System.out.println("Escolha inválida. Você perde a vez.");
+                }
+
+                // Verificar se o Rei Demônio foi derrotado
+                if(reiDemônio.getVida() <= 0) {
+                    System.out.println("Você derrotou o " + reiDemônio.getNome() + " e salvou o mundo do Mau!");
+                } else {
+                    reiDemônio.atacar(jogador);
+                }
+
+                // Verificar se o jogador foi derrotado
+                if(jogador.getVida() <= 0){
+                    System.out.println("Você foi obliterado pelo " + reiDemônio.getNome() + " e o mundo foi completamente dominado pela força do Rei Demônio.");
+                    break;
                 }
 
             }
-
     }
 }

@@ -12,6 +12,7 @@ public class Aldric extends Personagem implements Combate {
     private boolean desonrado;
     private Armas arma;
     private int energia;
+    private int energiaMaxima;
 
     //Construtores
     public Aldric(Armas arma){
@@ -21,6 +22,7 @@ public class Aldric extends Personagem implements Combate {
         this.desonrado = false;
         this.arma = arma;
         this.energia = 0;
+        this.energiaMaxima = 100;
     }
 
     //Getters & Setters
@@ -95,6 +97,14 @@ public class Aldric extends Personagem implements Combate {
 
     public void setEnergia(int energia){
         this.energia = energia;
+    }
+
+    public int getEnergiaMaxima() {
+        return energiaMaxima;
+    }
+
+    public void setEnergiaMaxima(int energiaMaxima) {
+        this.energiaMaxima = energiaMaxima;
     }
 
     // Método para chegar o status atual do personagem

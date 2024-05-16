@@ -4,6 +4,7 @@ public abstract class Personagem {
     //Atributos gerais que todos personangenss do meu rpg terão
     protected String nome;
     protected int vida;
+    protected int vidaMaxima;
     protected int ataque;
     protected int defesa;
 
@@ -11,6 +12,7 @@ public abstract class Personagem {
     public Personagem(String nome, int vida, int ataque, int defesa){
         this.nome = nome;
         this.vida = vida;
+        this.vidaMaxima = vida;
         this.ataque = ataque;
         this.defesa = defesa;
     }
@@ -30,6 +32,14 @@ public abstract class Personagem {
 
     public void setVida(int vida) {
         this.vida = vida;
+    }
+
+    public int getVidaMaxima() {
+        return vidaMaxima;
+    }
+
+    public void setVidaMaxima(int vidaMaxima) {
+        this.vidaMaxima = vidaMaxima;
     }
 
     public int getAtaque() {
