@@ -13,16 +13,20 @@ public class Aldric extends Personagem implements Combate {
     private Armas arma;
     private int energia;
     private int energiaMaxima;
+    private int ataqueMaximo;
+    private int defesaMaxima;
 
     //Construtores
     public Aldric(Armas arma){
-        super("Aldrich", 3000, 10, 0);
+        super("Aldrich", 3000, 76, 94);
         this.nivel = 0;
         this.exp = 0;
         this.desonrado = false;
         this.arma = arma;
         this.energia = 0;
         this.energiaMaxima = 100;
+        this.ataqueMaximo = 80;
+        this.defesaMaxima = 100;
     }
 
     //Getters & Setters
@@ -107,6 +111,22 @@ public class Aldric extends Personagem implements Combate {
         this.energiaMaxima = energiaMaxima;
     }
 
+    public int getDefesaMaxima() {
+        return defesaMaxima;
+    }
+
+    public void setDefesaMaxima(int defesaMaxima) {
+        this.defesaMaxima = defesaMaxima;
+    }
+
+    public int getAtaqueMaximo() {
+        return ataqueMaximo;
+    }
+
+    public void setAtaqueMaximo(int ataqueMaximo) {
+        this.ataqueMaximo = ataqueMaximo;
+    }
+
     // Método para chegar o status atual do personagem
     public void status(){
         System.out.println("------- STATUS DO PERSONAGEM -------");
@@ -127,6 +147,9 @@ public class Aldric extends Personagem implements Combate {
     @Override
     public void incrementarEnergia(int valor) {
         this.energia += valor;
+        if(this.energia > 100){
+            setEnergia(100);
+        }
     }
 
     // Método para atacar
@@ -181,7 +204,7 @@ public class Aldric extends Personagem implements Combate {
             alvo.setVida(alvo.getVida() - danoDoEspecial);
 
             // Printa pro usuário o especial e o dano
-            System.out.println(getNome() + " usou seu poder especial e causou" + danoDoEspecial);
+            System.out.println(getNome() + " usou seu poder especial e causou " + danoDoEspecial + " de dano!");
         } else {
             System.out.println("O poder de " + getNome() + " só pode ser usado contra a força do Rei Demônio.");
         }
@@ -219,6 +242,26 @@ public class Aldric extends Personagem implements Combate {
 
         } else {
             System.out.println("O Ultimate de " +getNome() + " só pode ser usado contra a força do Rei Demônio");
+        }
+    }
+
+    @Override
+    public void buffAtaque() {
+        if(this.ataque < ataqueMaximo){
+            this.ataque = Math.min(this.ataque += 2, ataqueMaximo);
+            System.out.println(getNome() + " recebeu um buff de ataque. Ataque atual: " + getAtaque());
+        } else {
+            System.out.println(getNome() + " já está com o ataque máximizado.");
+        }
+    }
+
+    @Override
+    public void buffDefesa() {
+        if(this.defesa < defesaMaxima){
+            this.defesa = Math.min(this.defesa += 2, defesaMaxima);
+            System.out.println(getNome() + " recebeu um buff de defesa. Defesa atual: " + getDefesa());
+        } else {
+            System.out.println(getNome() + " já está com a defesa máximizada.");
         }
     }
 }

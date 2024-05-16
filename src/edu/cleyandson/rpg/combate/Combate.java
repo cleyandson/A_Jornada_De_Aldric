@@ -8,4 +8,6 @@ public interface Combate {
     void poderEspecial(Personagem alvo);
     void incrementarEnergia(int valor);
     void ultimate(Personagem alvo);
+    void buffAtaque();
+    void buffDefesa();
 }

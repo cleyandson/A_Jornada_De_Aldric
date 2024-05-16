@@ -83,6 +83,8 @@ public class Main {
                 System.out.println(jogador.getNome());
                 System.out.println("HP: " + jogador.getVida() + "/" + jogador.getVidaMaxima());
                 System.out.println("Energia: " + jogador.getEnergia() + "/" + jogador.getEnergiaMaxima());
+                System.out.println("Ataque: " + jogador.getAtaque() + "/" + jogador.getAtaqueMaximo());
+                System.out.println("Defesa: " + jogador.getDefesa() + "/" + jogador.getDefesaMaxima());
                 System.out.println("-----------------------------------");
 
 
@@ -93,6 +95,9 @@ public class Main {
                 if (jogador.getEnergia() >= 100){
                     System.out.println("(3) - Usar Ultimate");
                 }
+                System.out.println("(4) - Buff de Ataque");
+                System.out.println("(5) - Buff de Defesa");
+
                 int acao = leitura.nextInt();
 
                 switch (acao){
@@ -110,6 +115,14 @@ public class Main {
                         } else {
                             System.out.println("Energia insuficiente para usar a Ultimate");
                         }
+                        break;
+
+                    case 4:
+                        jogador.buffAtaque();
+                        break;
+
+                    case 5:
+                        jogador.buffDefesa();
                         break;
 
                     default:
