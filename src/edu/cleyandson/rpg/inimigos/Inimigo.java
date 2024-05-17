@@ -42,6 +42,7 @@ public class Inimigo extends Personagem {
         this.defesa = defesa;
     }
 
+    // Método para atacar o protagonista
     @Override
     public void atacar(Personagem alvo) {
         int dano = getAtaque() - alvo.getDefesa();
@@ -49,7 +50,9 @@ public class Inimigo extends Personagem {
             dano = 0; //dano não pode ser negativo
         }
         alvo.setVida(alvo.getVida() - dano);
-        System.out.println(getNome() + " atacou " + alvo.getNome() + " e causou " + dano + " de dano!");
+
+        //Printa para o usuário o relatório de batalha
+        System.out.println(getNome() + " atacou " + alvo.getNome() + " e causou " + dano + " de dano!\n");
     }
 
     //Método para ver o status do inimigo

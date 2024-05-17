@@ -163,7 +163,7 @@ public class Aldric extends Personagem implements Combate {
         // Verficar se está com alguma arma na mão
         if(arma != null){
             danoBase += arma.getQuantidadePoder();
-            System.out.println("\n" + getNome() + " empunhou sua " + getArma().getNome() + " e agora está com " + danoBase + " de ataque!");
+            //System.out.println("\n" + getNome() + " empunhou sua " + getArma().getNome() + " e agora está com " + danoBase + " de ataque!");
         }
 
         // Calcular o dano considerando a defesa do inimigo
@@ -174,7 +174,12 @@ public class Aldric extends Personagem implements Combate {
 
         // Calcular o dano real que o inimigo recebeu e printar pro usuário
         int danoReal = alvo.getVida() - (alvo.getVida() - danoTotal);
+
+        System.out.println("----------------------------");
+        System.out.println("BATALHA");
+        System.out.println("----------------------------");
         System.out.println(getNome() + " atacou " + alvo.getNome() + " causando " + danoReal + " de dano!");
+        System.out.println("---------------------");
 
     }
 
@@ -204,7 +209,11 @@ public class Aldric extends Personagem implements Combate {
             alvo.setVida(alvo.getVida() - danoDoEspecial);
 
             // Printa pro usuário o especial e o dano
+            System.out.println("----------------------------");
+            System.out.println("BATALHA");
+            System.out.println("----------------------------");
             System.out.println(getNome() + " usou seu poder especial e causou " + danoDoEspecial + " de dano!");
+            System.out.println("---------------------");
         } else {
             System.out.println("O poder de " + getNome() + " só pode ser usado contra a força do Rei Demônio.");
         }
@@ -249,9 +258,17 @@ public class Aldric extends Personagem implements Combate {
     public void buffAtaque() {
         if(this.ataque < ataqueMaximo){
             this.ataque = Math.min(this.ataque += 2, ataqueMaximo);
+            System.out.println("----------------------------");
+            System.out.println("BATALHA");
+            System.out.println("----------------------------");
             System.out.println(getNome() + " recebeu um buff de ataque. Ataque atual: " + getAtaque());
+            System.out.println("----------------------------");
         } else {
+            System.out.println("----------------------------");
+            System.out.println("BATALHA");
+            System.out.println("----------------------------");
             System.out.println(getNome() + " já está com o ataque máximizado.");
+            System.out.println("----------------------------");
         }
     }
 
@@ -259,9 +276,17 @@ public class Aldric extends Personagem implements Combate {
     public void buffDefesa() {
         if(this.defesa < defesaMaxima){
             this.defesa = Math.min(this.defesa += 2, defesaMaxima);
+            System.out.println("----------------------------");
+            System.out.println("BATALHA");
+            System.out.println("----------------------------");
             System.out.println(getNome() + " recebeu um buff de defesa. Defesa atual: " + getDefesa());
+            System.out.println("----------------------------");
         } else {
+            System.out.println("----------------------------");
+            System.out.println("BATALHA");
+            System.out.println("----------------------------");
             System.out.println(getNome() + " já está com a defesa máximizada.");
+            System.out.println("----------------------------");
         }
     }
 }
