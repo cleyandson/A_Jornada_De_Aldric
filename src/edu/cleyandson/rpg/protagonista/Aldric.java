@@ -163,7 +163,7 @@ public class Aldric extends Personagem implements Combate {
         // Verficar se está com alguma arma na mão
         if(arma != null){
             danoBase += arma.getQuantidadePoder();
-            System.out.println(getNome() + " empunhou sua " + getArma().getNome() + " e agora está com " + danoBase + " de ataque!");
+            System.out.println("\n" + getNome() + " empunhou sua " + getArma().getNome() + " e agora está com " + danoBase + " de ataque!");
         }
 
         // Calcular o dano considerando a defesa do inimigo
