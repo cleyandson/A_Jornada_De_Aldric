@@ -18,7 +18,7 @@ public class Aldric extends Personagem implements Combate {
 
     //Construtores
     public Aldric(Armas arma){
-        super("Aldrich", 3000, 76, 94);
+        super("Aldrich", 3000, 46, 58);
         this.nivel = 0;
         this.exp = 0;
         this.desonrado = false;
@@ -200,7 +200,7 @@ public class Aldric extends Personagem implements Combate {
             }
 
             // O poder especial multiplica o dano base
-            int danoDuplicado = danoBase * 30;
+            int danoDuplicado = danoBase * 38;
 
             // Calcula o dano total considerando a defesa do alvo
             int danoDoEspecial = Math.max(0, danoDuplicado - alvo.getDefesa());
@@ -236,7 +236,7 @@ public class Aldric extends Personagem implements Combate {
             }
 
             // O Ultimate triplica o dano base
-            int danoDaUltimate = danoBase * 66;
+            int danoDaUltimate = danoBase * 72;
 
             // Lógica do dano real da ultimate
             int danoReal = Math.max(0, danoDaUltimate - alvo.getDefesa());
@@ -261,7 +261,7 @@ public class Aldric extends Personagem implements Combate {
     @Override
     public void buffAtaque() {
         if(this.ataque < ataqueMaximo){
-            this.ataque = Math.min(this.ataque += 2, ataqueMaximo);
+            this.ataque = Math.min(this.ataque += 34, ataqueMaximo);
             System.out.println("----------------------------");
             System.out.println("BATALHA");
             System.out.println("----------------------------");
@@ -279,7 +279,7 @@ public class Aldric extends Personagem implements Combate {
     @Override
     public void buffDefesa() {
         if(this.defesa < defesaMaxima){
-            this.defesa = Math.min(this.defesa += 2, defesaMaxima);
+            this.defesa = Math.min(this.defesa += 42, defesaMaxima);
             System.out.println("----------------------------");
             System.out.println("BATALHA");
             System.out.println("----------------------------");

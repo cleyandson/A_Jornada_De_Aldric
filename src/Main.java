@@ -172,7 +172,7 @@ public class Main {
             limparTerminal();
 
             // Criação do Rei Demônio
-            Inimigo reiDemônio = new Inimigo("Rei Demônio", 50000, 250, 0);
+            Inimigo reiDemônio = new Inimigo("Rei Demônio", 50000, 30, 0);
 
             // // ATO 1 - A luta contra o Rei Demônio parte 1/4
             System.out.println("-----------------------------------");
