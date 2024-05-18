@@ -158,7 +158,7 @@ public class Aldric extends Personagem implements Combate {
         // Incrementar 7 de energia a cada ataque
         incrementarEnergia(7);
 
-        int danoBase = getAtaque();
+        int danoBase = getAtaque() * 24;
 
         // Verficar se está com alguma arma na mão
         if(arma != null){
@@ -200,7 +200,7 @@ public class Aldric extends Personagem implements Combate {
             }
 
             // O poder especial multiplica o dano base
-            int danoDuplicado = danoBase * 2;
+            int danoDuplicado = danoBase * 30;
 
             // Calcula o dano total considerando a defesa do alvo
             int danoDoEspecial = Math.max(0, danoDuplicado - alvo.getDefesa());
@@ -236,7 +236,7 @@ public class Aldric extends Personagem implements Combate {
             }
 
             // O Ultimate triplica o dano base
-            int danoDaUltimate = danoBase * 3;
+            int danoDaUltimate = danoBase * 66;
 
             // Lógica do dano real da ultimate
             int danoReal = Math.max(0, danoDaUltimate - alvo.getDefesa());
@@ -244,7 +244,11 @@ public class Aldric extends Personagem implements Combate {
             // Setando o dano real no inimigo
             alvo.setVida(alvo.getVida() - danoReal);
 
+            System.out.println("----------------------------");
+            System.out.println("BATALHA");
+            System.out.println("----------------------------");
             System.out.println(getNome() + " usou seu Ultimate  e  causou " + danoReal + " de dano!");
+            System.out.println("----------------------------");
 
             // Reseta a energia após a Ultimate
             setEnergia(0);

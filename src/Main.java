@@ -107,7 +107,7 @@ public class Main {
             System.out.println("-------------------------------------------------");
             System.out.println("Introdução pt.2/2");
             System.out.println("-------------------------------------------------");
-            System.out.println("No meio deste caos, surge um raio de esperança - você, " +nomeJogador + ", um(a) ex--cavaleiro(a) nobre caído em desgraça após uma traição cruel");
+            System.out.println("No meio deste caos, surge um raio de esperança - você, " +nomeJogador + ", um(a) ex-cavaleiro(a) nobre caído em desgraça após uma traição cruel");
             System.out.println("Agora, você busca redenção em sua jornada épica para limpar o seu nome");
             System.out.println("E enfrentar o mau do Rei Demônio que assombra este mundo.\n");
 
@@ -123,11 +123,12 @@ public class Main {
             System.out.println("Escolha sua arma: ");
             System.out.println("(1) - Coração Valente: Simboliza a coragem e a determinação de " + nomeJogador);
             System.out.println("(2) - Destruidora do Mau: Direcionada ao combate contra o Rei Demônio");
-            System.out.println("(3) - Vingadora do Caído: Simboliza a ira e a luta de " + nomeJogador + "contra aqueles que o traíram");
+            System.out.println("(3) - Vingadora do Caído: Simboliza a ira e a luta de " + nomeJogador + " contra aqueles que o traíram");
             System.out.print("->");
 
             Armas armaEscolhida = null;
             int escolha = leitura.nextInt();
+            leitura.nextLine();
 
             switch (escolha) {
                 case 1:
@@ -161,7 +162,14 @@ public class Main {
 
             // Exibir o status inicial do personagem
             jogador.status();
-            System.out.println("----------------------------");
+            System.out.println("----------------------------\n");
+
+            // Espera o usuário pressionar qualquer tecla
+            System.out.println("Pressione Enter para continuar...");
+            leitura.nextLine();
+
+            /// Limpa terminal
+            limparTerminal();
 
             // Criação do Rei Demônio
             Inimigo reiDemônio = new Inimigo("Rei Demônio", 50000, 250, 0);
@@ -218,6 +226,22 @@ public class Main {
             System.out.println("Com determinação em seu coração e sua espada em mãos, você entra no castelo!");
             System.out.println("O confronto final está prestes a começar...");
             System.out.println("A luta contra o Rei Demônio!\n");
+
+            // Espera o usuário pressionar qualquer tecla
+            System.out.println("Pressione Enter para continuar...");
+            leitura.nextLine();
+
+            /// Limpa terminal
+            limparTerminal();
+
+            //  Interação direta do Rei Demônio com o protagonista
+            System.out.println("-----------------------------------");
+            System.out.println(" O Rei Demônio ");
+            System.out.println("-----------------------------------");
+            System.out.println(reiDemônio.getNome() + ": Então, você finalmente chegou, " +nomeJogador + "...");
+            System.out.println("Eu estava ansiosamente aguardando por esse momento.");
+            System.out.println("Esta será a batalha que decidirá o destino de Eterídea!");
+            System.out.println("Mostre-me que sua coragem e determinação é forte o suficiente para resistir à escuridão do meu reinado!\n");
 
             // Espera o usuário pressionar qualquer tecla
             System.out.println("Pressione Enter para continuar...");
@@ -330,7 +354,21 @@ public class Main {
 
                 // Verificar se o Rei Demônio foi derrotado, senão foi derrotado, o Rei Demônio ataca o jogador
                 if (reiDemônio.getVida() <= 0) {
-                    System.out.println("Você derrotou o " + reiDemônio.getNome() + " e salvou o mundo do Mau!");
+                    System.out.println("-----------------------------------");
+                    System.out.println("Você derrotou o " + reiDemônio.getNome() + "!");
+                    System.out.println("-----------------------------------");
+                    System.out.println("Eterídea agora respira aliviada...");
+                    System.out.println("A tirania do Rei Demônio acabou.");
+
+                    // Espera o usuário pressionar qualquer tecla
+                    System.out.println("Pressione Enter para continuar...");
+                    leitura.nextLine();
+
+                    /// Limpa terminal
+                    limparTerminal();
+
+                    System.out.println("Você é verdadeiramente digno do título de Héroi!");
+                    System.out.println("Parabéns, Herói!\n");
                 } else {
                     reiDemônio.atacar(jogador);
                 }
@@ -344,7 +382,22 @@ public class Main {
 
                 // Verificar se o jogador foi derrotado
                 if (jogador.getVida() <= 0) {
-                    System.out.println("Você foi obliterado pelo " + reiDemônio.getNome() + " e o mundo foi completamente dominado pela força do Rei Demônio.");
+                    System.out.println("-----------------------------------");
+                    System.out.println("Você foi derrotado pelo " + reiDemônio.getNome() + "!");
+                    System.out.println("-----------------------------------");
+                    System.out.println("Sua visão escure enquanto " + reiDemônio.getNome() + " desfere o golpe final.");
+                    System.out.println("Você cai, derrotado(a), enquanto o riso cruel do Rei Demônio ecoa em seus ouvidos.\n");
+
+                    // Espera o usuário pressionar qualquer tecla
+                    System.out.println("Pressione Enter para continuar...");
+                    leitura.nextLine();
+
+                    /// Limpa terminal
+                    limparTerminal();
+
+                    System.out.println("A escuridão se instala...");
+                    System.out.println("E o último pensamento que passa pela sua mente é o mundo que você não conseguiu salvar.");
+                    System.out.println("O reinado do Rei Demônio continua, incontestável e absoluto.\n");
                     break;
                 }
             }
