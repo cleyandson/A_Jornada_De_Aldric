@@ -1,4 +1,4 @@
-# A Jornada de Redenção - RPG de Texto 
+# 👾 A Jornada de Redenção - RPG de Texto 👾
 Neste RPG de texto, você embarcará em uma emocionante jornada de redenção em um mundo assolado pela escuridão e pelo caos. Siga em frente, enfrente desafios épicos e lute contra o poderoso Rei Demônio para restaurar a paz e a ordem em Eterídea.
 
 
